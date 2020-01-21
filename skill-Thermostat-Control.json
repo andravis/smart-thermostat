@@ -1,0 +1,914 @@
+{
+  "intents": [
+    {
+      "intent": "getThermostatStatus",
+      "examples": [
+        {
+          "text": "Is the thermostat on?"
+        },
+        {
+          "text": "Is the thermostat running?"
+        },
+        {
+          "text": "Is it cooling the house?"
+        },
+        {
+          "text": "Is it heating the rooms?"
+        },
+        {
+          "text": "Is the thermostat running right now?"
+        },
+        {
+          "text": "Check on the thermostat."
+        },
+        {
+          "text": "What's the thermostat doing?"
+        },
+        {
+          "text": "Get the thermostat's status."
+        },
+        {
+          "text": "What's up with the thermostat?"
+        },
+        {
+          "text": "What's going on with the thermostat?"
+        },
+        {
+          "text": "Is the heater on?"
+        },
+        {
+          "text": "Is the AC on?"
+        }
+      ],
+      "description": "User wants to know if the thermostat is on, off, or if it's running."
+    },
+    {
+      "intent": "done",
+      "examples": [
+        {
+          "text": "I'm good but thanks"
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Good bye"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "That's all"
+        },
+        {
+          "text": "I am good"
+        },
+        {
+          "text": "No, thanks"
+        },
+        {
+          "text": "No thank you"
+        },
+        {
+          "text": "I'm all done"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "I'm good"
+        },
+        {
+          "text": "Not now"
+        },
+        {
+          "text": "Not right now"
+        },
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Bye"
+        }
+      ],
+      "description": "User is done interacting with the assistant."
+    },
+    {
+      "intent": "setThermostat",
+      "examples": [
+        {
+          "text": "Turn on"
+        },
+        {
+          "text": "Cool down the thouse"
+        },
+        {
+          "text": "Heat up the house"
+        },
+        {
+          "text": "Cool down the house to 72 degrees",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                23,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Heat up the house to 72 degrees",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                21,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Set the temperature to 100",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                23,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Set the thermostat to 100",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                22,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Turn on the thermostat and set it to 60 degrees",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                37,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Turn on the thermostat and set it to 82",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                37,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Turn on the thermostat"
+        }
+      ],
+      "description": "User would like to turn on the thermostat and potentially set it to a desired temperature."
+    },
+    {
+      "intent": "whatIsTheTemp",
+      "examples": [
+        {
+          "text": "What's it like outside of bed right now?"
+        },
+        {
+          "text": "What's the current temp?"
+        },
+        {
+          "text": "How hot is it"
+        },
+        {
+          "text": "How cold is it right now?"
+        },
+        {
+          "text": "What's the temperature."
+        },
+        {
+          "text": "How cold is it?"
+        },
+        {
+          "text": "What's the temperature at home?"
+        },
+        {
+          "text": "How hot is it in the living room?"
+        },
+        {
+          "text": "Is it over 100 degrees right now?"
+        },
+        {
+          "text": "Is it below freezing!"
+        },
+        {
+          "text": "What's it like inside the house"
+        }
+      ],
+      "description": "User wants to know how hot or cold it is in their home."
+    },
+    {
+      "intent": "turnOffThermostat",
+      "examples": [
+        {
+          "text": "Sure, let's turn it off."
+        },
+        {
+          "text": "No, turn it off."
+        },
+        {
+          "text": "Yes, turn it off."
+        },
+        {
+          "text": "Turn it off please."
+        },
+        {
+          "text": "Turn it off."
+        },
+        {
+          "text": "Shut it off."
+        },
+        {
+          "text": "Shut off the thermostat."
+        },
+        {
+          "text": "Turn off."
+        },
+        {
+          "text": "Turn off thermostat."
+        },
+        {
+          "text": "Turn off the thermostat."
+        }
+      ],
+      "description": "User would like to turn off the thermostat."
+    }
+  ],
+  "entities": [
+    {
+      "entity": "response",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "yes",
+          "synonyms": [
+            "Yes",
+            "Yep",
+            "Yeah",
+            "For sure"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "no",
+          "synonyms": [
+            "Nope",
+            "No way",
+            "Nah"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "degree",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "72",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "100",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "60",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "82",
+          "synonyms": []
+        },
+        {
+          "type": "patterns",
+          "value": "degree",
+          "patterns": [
+            "([6-9]{1}[0-9]{1})|(100)"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "http://webhook.site/152ea314-6c9f-4dd9-9b81-bb823e80b3ab",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Try Again?",
+      "parent": "node_10_1579236545752",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@response:yes || @response:no",
+      "dialog_node": "node_8_1579236596191"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, have a wonderful day."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1579236596191",
+      "conditions": "@response:no",
+      "dialog_node": "response_9_1579236660571",
+      "previous_sibling": "response_4_1579236634796"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, trying again."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1579236596191",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1579147771512"
+      },
+      "conditions": "@response:yes",
+      "dialog_node": "response_4_1579236634796"
+    },
+    {
+      "type": "standard",
+      "title": "No - Do not Adjust Thermometer",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_1_1579293879244",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1579293953933"
+      },
+      "conditions": "@response:no",
+      "dialog_node": "node_5_1579293879248",
+      "previous_sibling": "node_2_1579293879248"
+    },
+    {
+      "type": "standard",
+      "title": "Yes - Adjust Thermometer",
+      "output": {},
+      "parent": "node_1_1579293879244",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@response:yes",
+      "dialog_node": "node_2_1579293879248",
+      "previous_sibling": "response_8_1579293913715"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "It's currently $currentTemp degrees inside the house."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1579293879244",
+      "conditions": "#whatIsTheTemp",
+      "dialog_node": "response_8_1579293913715",
+      "previous_sibling": "response_1_1579293897655"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thermostat is currently <? $heatingOrCooling ? $heatingOrCooling+\" the house\" : \"off\" ?>. <? $thermostatPower ? \"Would you like to turn it off?\" : \"Would you like to turn it on?\" ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1579293879244",
+      "context": {},
+      "conditions": "#getThermostatStatus",
+      "dialog_node": "response_1_1579293897655"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, turning it on now."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1579293879248",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1579119458739"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_4_1579293879248",
+      "previous_sibling": "response_3_1579293879248"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, I'll turn off the thermostat."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1579293879248",
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_7_1579235883968"
+      },
+      "conditions": "$thermostatPower == true",
+      "dialog_node": "response_3_1579293879248"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "time": 500,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Ok, the thermostat has been turned off."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1579236415085",
+      "context": {
+        "thermostatPower": false
+      },
+      "conditions": "$power == \"off\"",
+      "dialog_node": "response_4_1579236462530",
+      "previous_sibling": "response_1_1579236455246"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "time": 500,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Ok the thermostat is $heatingOrCooling the house. It will take about $minutesToAdjust minutes to reach $desiredTemp degrees."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1579236415085",
+      "context": {
+        "minutesToAdjust": "<? 2*T(Math).abs($desiredTemp.toInt() - $currentTemp.toInt()) ?>",
+        "thermostatPower": true,
+        "heatingOrCooling": "<? $desiredTemp.toInt() >= $currentTemp.toInt() ? \"heating\" : \"cooling\" ?>"
+      },
+      "conditions": "$power == \"on\"",
+      "dialog_node": "response_1_1579236455246"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "What temperature would you like it set to?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_6_1579120014305",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1579120014308",
+      "previous_sibling": "handler_1_1579120014308"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1579120014305",
+      "context": {
+        "desiredTemp": "@degree.literal"
+      },
+      "conditions": "@degree.literal",
+      "event_name": "input",
+      "dialog_node": "handler_1_1579120014308"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1579147771512",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1579236415085"
+      },
+      "conditions": "$adjustWh",
+      "dialog_node": "response_8_1579147847588",
+      "previous_sibling": "node_10_1579236545752"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1579147771512",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1579236545752"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "response_2_1579147848493",
+      "previous_sibling": "response_8_1579147847588"
+    },
+    {
+      "type": "standard",
+      "title": "Adjust - Failed",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry but something went wrong."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Would you like to try again?",
+            "options": [
+              {
+                "label": "Yes",
+                "value": {
+                  "input": {
+                    "text": "Yes"
+                  }
+                }
+              },
+              {
+                "label": "No",
+                "value": {
+                  "input": {
+                    "text": "No"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1579147771512",
+      "dialog_node": "node_10_1579236545752",
+      "previous_sibling": "node_10_1579236415085"
+    },
+    {
+      "type": "standard",
+      "title": "Adjust - Success",
+      "parent": "node_3_1579147771512",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "dialog_node": "node_10_1579236415085"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1579119458739",
+      "variable": "$desiredTemp",
+      "conditions": "",
+      "dialog_node": "slot_6_1579120014305"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, have a great afternoon."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1579293953933",
+      "conditions": "now().before('15:00:00')",
+      "dialog_node": "response_7_1579294076698",
+      "previous_sibling": "response_9_1579294042897"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, have a great evening."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1579293953933",
+      "conditions": "now().before('19:00:00')",
+      "dialog_node": "response_7_1579294114670",
+      "previous_sibling": "response_7_1579294076698"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, have a great night."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1579293953933",
+      "conditions": "now().before('23:59:99')",
+      "dialog_node": "response_8_1579294139368",
+      "previous_sibling": "response_7_1579294114670"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Ok, good bye."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1579293953933",
+      "conditions": "anything_else",
+      "dialog_node": "response_10_1579294176958",
+      "previous_sibling": "response_8_1579294139368"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok, have a great morning!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1579293953933",
+      "conditions": "now().before('12:00:00')",
+      "dialog_node": "response_9_1579294042897"
+    },
+    {
+      "type": "standard",
+      "title": "Check on Thermostat or Current Temperature",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#getThermostatStatus || #whatIsTheTemp",
+      "dialog_node": "node_1_1579293879244",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Adjust Thermostat",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "data": "$data",
+            "power": "$power"
+          },
+          "result_variable": "adjustWh"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "dialog_node": "node_3_1579147771512",
+      "previous_sibling": "node_7_1579235883968"
+    },
+    {
+      "type": "frame",
+      "title": "Turn on and get Desired Temperature",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "data": {
+          "desiredTemp": "$desiredTemp"
+        },
+        "power": "on"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1579147771512"
+      },
+      "conditions": "#setThermostat",
+      "dialog_node": "node_3_1579119458739",
+      "previous_sibling": "node_1_1579293879244"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@response:no || #done",
+      "dialog_node": "node_6_1579293953933",
+      "previous_sibling": "node_3_1579147771512"
+    },
+    {
+      "type": "standard",
+      "title": "Turn off Thermostat",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "data": null,
+        "power": "off"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1579147771512"
+      },
+      "conditions": "#turnOffThermostat",
+      "dialog_node": "node_7_1579235883968",
+      "previous_sibling": "node_3_1579119458739"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_6_1579293953933",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, I'm your Home Butler. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "data": null,
+        "power": null,
+        "currentTemp": 82,
+        "desiredTemp": null,
+        "minutesToAdjust": null,
+        "thermostatPower": null,
+        "heatingOrCooling": null
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Thermostat Control",
+  "language": "en",
+  "description": ""
+}
