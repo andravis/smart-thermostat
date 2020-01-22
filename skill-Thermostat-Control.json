@@ -1,34 +1,73 @@
 {
   "intents": [
     {
+      "intent": "adjustMusic",
+      "examples": [
+        {
+          "text": "Play Post Malone"
+        },
+        {
+          "text": "Play Christmas music"
+        },
+        {
+          "text": "Play music louder"
+        },
+        {
+          "text": "Turn up the music"
+        },
+        {
+          "text": "Lower the volume"
+        },
+        {
+          "text": "Turn the music down"
+        },
+        {
+          "text": "Play a song"
+        },
+        {
+          "text": "Play DJ Khalid"
+        },
+        {
+          "text": "Play music"
+        },
+        {
+          "text": "Play the Beach Boys"
+        },
+        {
+          "text": "Play the Beetles"
+        }
+      ],
+      "description": "User wishes to play music."
+    },
+    {
       "intent": "getThermostatStatus",
       "examples": [
         {
-          "text": "What's up with the thermostat?"
+          "text": "Get the thermostat's status."
         },
         {
           "text": "Is the thermostat running?"
         },
         {
-          "text": "Get the thermostat's status."
-        },
-        {
-          "text": "What's the thermostat doing?"
-        },
-        {
-          "text": "Check on the thermostat."
-        },
-        {
-          "text": "Is the thermostat running right now?"
-        },
-        {
-          "text": "Is the thermostat on?"
+          "text": "Is it cooling the house?"
         },
         {
           "text": "Is it heating the rooms?"
         },
         {
-          "text": "Is it cooling the house?"
+          "text": "Is the thermostat running right now?"
+        },
+        {
+          "text": "Check on the thermostat."
+        },
+        {
+          "text": "What's the thermostat doing?"
+        },
+        {
+          "text": "What's up with the thermostat?"
+        },
+        {
+          "text": "What's going on with the thermostat?"
         },
         {
           "text": "Is the heater on?"
@@ -37,7 +76,7 @@
           "text": "Is the AC on?"
         },
         {
-          "text": "What's going on with the thermostat?"
+          "text": "Is the thermostat on?"
         }
       ],
       "description": "User wants to know if the thermostat is on, off, or if it's running."
@@ -45,6 +84,9 @@
     {
       "intent": "tooCold",
       "examples": [
+        {
+          "text": "My condo's too cold"
+        },
         {
           "text": "My bedroom's too cold"
         },
@@ -77,9 +119,6 @@
         },
         {
           "text": "It's too cold in the apartment"
-        },
-        {
-          "text": "My condo's too cold"
         }
       ],
       "description": "User is complaining it's too cold."
@@ -88,46 +127,46 @@
       "intent": "tooHot",
       "examples": [
         {
+          "text": "Too hot in the house"
+        },
+        {
+          "text": "I'm burning!"
+        },
+        {
           "text": "It's too hot"
         },
         {
           "text": "I'm sweating in here"
         },
         {
-          "text": "I'm burning up"
-        },
-        {
-          "text": "It's too hot in my room"
-        },
-        {
-          "text": "My bedroom's too hot"
-        },
-        {
-          "text": "My condo's too hot"
-        },
-        {
-          "text": "It's too hot in the apartment"
-        },
-        {
-          "text": "It's too hot in the house"
-        },
-        {
-          "text": "Why's it so hot in here"
+          "text": "Why is it so hot"
         },
         {
           "text": "Why's it so hot?"
         },
         {
-          "text": "Why is it so hot"
+          "text": "Why's it so hot in here"
+        },
+        {
+          "text": "It's too hot in the house"
+        },
+        {
+          "text": "It's too hot in the apartment"
+        },
+        {
+          "text": "My condo's too hot"
+        },
+        {
+          "text": "My bedroom's too hot"
+        },
+        {
+          "text": "It's too hot in my room"
+        },
+        {
+          "text": "I'm burning up"
         },
         {
           "text": "I'm burning right now"
-        },
-        {
-          "text": "Too hot in the house"
-        },
-        {
-          "text": "I'm burning!"
         }
       ]
     },
@@ -135,34 +174,10 @@
       "intent": "done",
       "examples": [
         {
-          "text": "Bye"
-        },
-        {
-          "text": "I'm good"
-        },
-        {
           "text": "I'm done"
         },
         {
           "text": "I'm all done"
-        },
-        {
-          "text": "I'm good but thanks"
-        },
-        {
-          "text": "I am good"
-        },
-        {
-          "text": "That's all"
-        },
-        {
-          "text": "That is all"
-        },
-        {
-          "text": "Good bye"
-        },
-        {
-          "text": "Goodbye"
         },
         {
           "text": "Not now"
@@ -172,6 +187,30 @@
         },
         {
           "text": "Bye bye"
+        },
+        {
+          "text": "Bye"
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Good bye"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "That's all"
+        },
+        {
+          "text": "I am good"
+        },
+        {
+          "text": "I'm good but thanks"
+        },
+        {
+          "text": "I'm good"
         }
       ],
       "description": "User is done interacting with the assistant."
@@ -267,10 +306,58 @@
       "description": "User would like to turn on the thermostat and potentially set it to a desired temperature."
     },
     {
+      "intent": "adjustLights",
+      "examples": [
+        {
+          "text": "Turn on the house's lights"
+        },
+        {
+          "text": "Turn the lights off"
+        },
+        {
+          "text": "Turn on lights"
+        },
+        {
+          "text": "Turn off lights"
+        },
+        {
+          "text": "Turn off the lights"
+        },
+        {
+          "text": "Dim the lights a little"
+        },
+        {
+          "text": "Turn on the kitchen lights"
+        },
+        {
+          "text": "Turn off the bathroom lights"
+        },
+        {
+          "text": "Set the lights to evening"
+        },
+        {
+          "text": "Set the lights to morning"
+        },
+        {
+          "text": "Turn on my desk light"
+        },
+        {
+          "text": "Turn the lights on"
+        },
+        {
+          "text": "Turn on the porch light"
+        },
+        {
+          "text": "Turn off the house's lights"
+        }
+      ],
+      "description": "User wishes to control the lighting."
+    },
+    {
       "intent": "whatIsTheTemp",
       "examples": [
         {
-          "text": "What's it like outside of bed right now?"
+          "text": "What's it like inside the house"
         },
         {
           "text": "What's the current temp?"
@@ -300,7 +387,7 @@
           "text": "Is it below freezing!"
         },
         {
-          "text": "What's it like inside the house"
+          "text": "What's it like outside of bed right now?"
         }
       ],
       "description": "User wants to know how hot or cold it is in their home."
@@ -308,6 +395,9 @@
     {
       "intent": "turnOffThermostat",
       "examples": [
+        {
+          "text": "Sure, let's turn it off."
+        },
         {
           "text": "No, turn it off."
         },
@@ -334,9 +424,6 @@
         },
         {
           "text": "Turn off the thermostat."
-        },
-        {
-          "text": "Sure, let's turn it off."
         }
       ],
       "description": "User would like to turn off the thermostat."
@@ -980,18 +1067,6 @@
     },
     {
       "type": "standard",
-      "title": "Goodbye",
-      "metadata": {
-        "_customization": {
-          "mcr": true
-        }
-      },
-      "conditions": "@response:no || #done",
-      "dialog_node": "node_6_1579293953933",
-      "previous_sibling": "node_10_1579667046084"
-    },
-    {
-      "type": "standard",
       "title": "Thank you",
       "output": {
         "generic": [
@@ -1013,7 +1088,65 @@
       },
       "conditions": "@thankYou",
       "dialog_node": "node_10_1579667046084",
+      "previous_sibling": "node_1_1579724995413"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@response:no || #done",
+      "dialog_node": "node_6_1579293953933",
+      "previous_sibling": "node_10_1579667046084"
+    },
+    {
+      "type": "standard",
+      "title": "Adjust Lights",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, but I'm too short to reach the light switch. I can control your home's smart thermostat though. Try something like \"Turn the thermostat on.\""
+              },
+              {
+                "text": "Yeah, can't do that. Those smart thermostats though... Love controlling them."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#adjustLights",
+      "dialog_node": "node_9_1579724803113",
       "previous_sibling": "node_3_1579147771512"
+    },
+    {
+      "type": "standard",
+      "title": "Adjust Music",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, I'm trained to  only control the thermostat at the moment, but I can sing you a song. *cough* *cough* 🎤  And IIIIIIiiiiiiIIIIII!!!! 🎵 Will ALWAYS Love YouUUUUUUUUuuu whooo ooooo Youuuu!  🎶"
+              },
+              {
+                "text": "Sorry, I need to catch my breath after singing my heart out. Let me know if you want to adjust the house's thermostat though."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#adjustMusic",
+      "dialog_node": "node_1_1579724995413",
+      "previous_sibling": "node_9_1579724803113"
     },
     {
       "type": "standard",
