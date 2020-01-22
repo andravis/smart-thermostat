@@ -4,12 +4,6 @@
       "intent": "getThermostatStatus",
       "examples": [
         {
-          "text": "Is the thermostat on?"
-        },
-        {
-          "text": "Is the thermostat running?"
-        },
-        {
           "text": "Is it cooling the house?"
         },
         {
@@ -34,10 +28,16 @@
           "text": "What's going on with the thermostat?"
         },
         {
+          "text": "Is the thermostat on?"
+        },
+        {
           "text": "Is the heater on?"
         },
         {
           "text": "Is the AC on?"
+        },
+        {
+          "text": "Is the thermostat running?"
         }
       ],
       "description": "User wants to know if the thermostat is on, off, or if it's running."
@@ -46,7 +46,10 @@
       "intent": "done",
       "examples": [
         {
-          "text": "I'm good but thanks"
+          "text": "Bye"
+        },
+        {
+          "text": "Bye bye"
         },
         {
           "text": "Goodbye"
@@ -64,10 +67,7 @@
           "text": "I am good"
         },
         {
-          "text": "No, thanks"
-        },
-        {
-          "text": "No thank you"
+          "text": "I'm good but thanks"
         },
         {
           "text": "I'm all done"
@@ -83,12 +83,6 @@
         },
         {
           "text": "Not right now"
-        },
-        {
-          "text": "Bye bye"
-        },
-        {
-          "text": "Bye"
         }
       ],
       "description": "User is done interacting with the assistant."
@@ -96,6 +90,21 @@
     {
       "intent": "setThermostat",
       "examples": [
+        {
+          "text": "Turn on the thermostat and set it to 82",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                37,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Turn on the thermostat"
+        },
         {
           "text": "Turn on"
         },
@@ -164,21 +173,6 @@
               ]
             }
           ]
-        },
-        {
-          "text": "Turn on the thermostat and set it to 82",
-          "mentions": [
-            {
-              "entity": "degree",
-              "location": [
-                37,
-                39
-              ]
-            }
-          ]
-        },
-        {
-          "text": "Turn on the thermostat"
         }
       ],
       "description": "User would like to turn on the thermostat and potentially set it to a desired temperature."
@@ -226,9 +220,6 @@
       "intent": "turnOffThermostat",
       "examples": [
         {
-          "text": "Sure, let's turn it off."
-        },
-        {
           "text": "No, turn it off."
         },
         {
@@ -254,6 +245,9 @@
         },
         {
           "text": "Turn off the thermostat."
+        },
+        {
+          "text": "Sure, let's turn it off."
         }
       ],
       "description": "User would like to turn off the thermostat."
@@ -286,18 +280,35 @@
       "fuzzy_match": true
     },
     {
-      "entity": "degree",
+      "entity": "thankYou",
       "values": [
         {
           "type": "synonyms",
-          "value": "72",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "100",
-          "synonyms": []
-        },
+          "value": "Thank you",
+          "synonyms": [
+            "Thank you",
+            "Thank you!",
+            "Thanks",
+            "Thanks!",
+            "Thank you very much",
+            "Thank you much",
+            "Thank you very much!",
+            "Thanks a bunch",
+            "Thanks bunch",
+            "Thanks a lot",
+            "No thank you",
+            "No, thank you",
+            "No, thank you.",
+            "No, thank you!",
+            "No, thanks!"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "degree",
+      "values": [
         {
           "type": "synonyms",
           "value": "60",
@@ -314,6 +325,16 @@
           "patterns": [
             "([6-9]{1}[0-9]{1})|(100)"
           ]
+        },
+        {
+          "type": "synonyms",
+          "value": "72",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "100",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -674,7 +695,7 @@
       "output": {
         "text": {
           "values": [
-            "Ok, have a great afternoon."
+            "Have a great afternoon."
           ],
           "selection_policy": "sequential"
         }
@@ -689,7 +710,7 @@
       "output": {
         "text": {
           "values": [
-            "Ok, have a great evening."
+            "Have a great evening."
           ],
           "selection_policy": "sequential"
         }
@@ -704,7 +725,7 @@
       "output": {
         "text": {
           "values": [
-            "Ok, have a great night."
+            "Have a great night."
           ],
           "selection_policy": "sequential"
         }
@@ -719,7 +740,7 @@
       "output": {
         "text": {
           "values": [
-            "Ok, good bye."
+            "Good bye."
           ],
           "selection_policy": "sequential"
         }
@@ -736,7 +757,7 @@
           {
             "values": [
               {
-                "text": "Ok, have a great morning!"
+                "text": "Have a great morning!"
               }
             ],
             "response_type": "text",
@@ -813,6 +834,31 @@
       },
       "conditions": "@response:no || #done",
       "dialog_node": "node_6_1579293953933",
+      "previous_sibling": "node_10_1579667046084"
+    },
+    {
+      "type": "standard",
+      "title": "You're Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You got it."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1579293953933"
+      },
+      "conditions": "@thankYou",
+      "dialog_node": "node_10_1579667046084",
       "previous_sibling": "node_3_1579147771512"
     },
     {
@@ -863,13 +909,13 @@
     },
     {
       "type": "standard",
-      "title": "Welcome",
+      "title": "Hi",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Hi, I'm your Home Butler. How can I help you?"
+                "text": "Hi, my name is Jeeves, your home butler. Try giving me a command like turn on the thermostat."
               }
             ],
             "response_type": "text",
