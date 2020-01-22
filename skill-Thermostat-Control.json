@@ -4,31 +4,31 @@
       "intent": "getThermostatStatus",
       "examples": [
         {
-          "text": "Is it cooling the house?"
+          "text": "What's up with the thermostat?"
         },
         {
-          "text": "Is it heating the rooms?"
-        },
-        {
-          "text": "Is the thermostat running right now?"
-        },
-        {
-          "text": "Check on the thermostat."
-        },
-        {
-          "text": "What's the thermostat doing?"
+          "text": "Is the thermostat running?"
         },
         {
           "text": "Get the thermostat's status."
         },
         {
-          "text": "What's up with the thermostat?"
+          "text": "What's the thermostat doing?"
         },
         {
-          "text": "What's going on with the thermostat?"
+          "text": "Check on the thermostat."
+        },
+        {
+          "text": "Is the thermostat running right now?"
         },
         {
           "text": "Is the thermostat on?"
+        },
+        {
+          "text": "Is it heating the rooms?"
+        },
+        {
+          "text": "Is it cooling the house?"
         },
         {
           "text": "Is the heater on?"
@@ -37,10 +37,99 @@
           "text": "Is the AC on?"
         },
         {
-          "text": "Is the thermostat running?"
+          "text": "What's going on with the thermostat?"
         }
       ],
       "description": "User wants to know if the thermostat is on, off, or if it's running."
+    },
+    {
+      "intent": "tooCold",
+      "examples": [
+        {
+          "text": "My bedroom's too cold"
+        },
+        {
+          "text": "It's too cold in my room"
+        },
+        {
+          "text": "It's too cold"
+        },
+        {
+          "text": "I'm freezing!"
+        },
+        {
+          "text": "Too cold in the house"
+        },
+        {
+          "text": "I'm freezing right now"
+        },
+        {
+          "text": "Why is it so cold"
+        },
+        {
+          "text": "Why's it so cold?"
+        },
+        {
+          "text": "Why's it so cold in here"
+        },
+        {
+          "text": "It's too cold in the house"
+        },
+        {
+          "text": "It's too cold in the apartment"
+        },
+        {
+          "text": "My condo's too cold"
+        }
+      ],
+      "description": "User is complaining it's too cold."
+    },
+    {
+      "intent": "tooHot",
+      "examples": [
+        {
+          "text": "It's too hot"
+        },
+        {
+          "text": "I'm sweating in here"
+        },
+        {
+          "text": "I'm burning up"
+        },
+        {
+          "text": "It's too hot in my room"
+        },
+        {
+          "text": "My bedroom's too hot"
+        },
+        {
+          "text": "My condo's too hot"
+        },
+        {
+          "text": "It's too hot in the apartment"
+        },
+        {
+          "text": "It's too hot in the house"
+        },
+        {
+          "text": "Why's it so hot in here"
+        },
+        {
+          "text": "Why's it so hot?"
+        },
+        {
+          "text": "Why is it so hot"
+        },
+        {
+          "text": "I'm burning right now"
+        },
+        {
+          "text": "Too hot in the house"
+        },
+        {
+          "text": "I'm burning!"
+        }
+      ]
     },
     {
       "intent": "done",
@@ -49,40 +138,40 @@
           "text": "Bye"
         },
         {
-          "text": "Bye bye"
-        },
-        {
-          "text": "Goodbye"
-        },
-        {
-          "text": "Good bye"
-        },
-        {
-          "text": "That is all"
-        },
-        {
-          "text": "That's all"
-        },
-        {
-          "text": "I am good"
-        },
-        {
-          "text": "I'm good but thanks"
-        },
-        {
-          "text": "I'm all done"
+          "text": "I'm good"
         },
         {
           "text": "I'm done"
         },
         {
-          "text": "I'm good"
+          "text": "I'm all done"
+        },
+        {
+          "text": "I'm good but thanks"
+        },
+        {
+          "text": "I am good"
+        },
+        {
+          "text": "That's all"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "Good bye"
+        },
+        {
+          "text": "Goodbye"
         },
         {
           "text": "Not now"
         },
         {
           "text": "Not right now"
+        },
+        {
+          "text": "Bye bye"
         }
       ],
       "description": "User is done interacting with the assistant."
@@ -91,16 +180,7 @@
       "intent": "setThermostat",
       "examples": [
         {
-          "text": "Turn on the thermostat and set it to 82",
-          "mentions": [
-            {
-              "entity": "degree",
-              "location": [
-                37,
-                39
-              ]
-            }
-          ]
+          "text": "Heat up the house"
         },
         {
           "text": "Turn on the thermostat"
@@ -110,9 +190,6 @@
         },
         {
           "text": "Cool down the thouse"
-        },
-        {
-          "text": "Heat up the house"
         },
         {
           "text": "Cool down the house to 72 degrees",
@@ -164,6 +241,18 @@
         },
         {
           "text": "Turn on the thermostat and set it to 60 degrees",
+          "mentions": [
+            {
+              "entity": "degree",
+              "location": [
+                37,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Turn on the thermostat and set it to 82",
           "mentions": [
             {
               "entity": "degree",
@@ -280,6 +369,44 @@
       "fuzzy_match": true
     },
     {
+      "entity": "youToo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "You, too.",
+          "synonyms": [
+            "You, too.",
+            "You, too!",
+            "Have a good morning",
+            "Have a good morning.",
+            "Have a good morning!",
+            "Have a great morning",
+            "Have a great morning.",
+            "Have a great morning!",
+            "Have a good day",
+            "Have a good day.",
+            "Have a good day!",
+            "Have a great day",
+            "Have a great day.",
+            "Have a great day!",
+            "Have a good night",
+            "Have a good night.",
+            "Have a good night!",
+            "Have a great night",
+            "Have a great night.",
+            "Have a great night!",
+            "Have a good one",
+            "Have a good one.",
+            "Have a good one!",
+            "Good night",
+            "Good night.",
+            "Good night!"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
       "entity": "thankYou",
       "values": [
         {
@@ -311,11 +438,6 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "60",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
           "value": "82",
           "synonyms": []
         },
@@ -334,6 +456,11 @@
         {
           "type": "synonyms",
           "value": "100",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "60",
           "synonyms": []
         }
       ],
@@ -578,7 +705,7 @@
       "output": {
         "text": {
           "values": [
-            "What temperature would you like it set to?"
+            "What temperature would you like the thermostat set to?"
           ],
           "selection_policy": "sequential"
         }
@@ -771,6 +898,33 @@
     },
     {
       "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. Try something like, \"Set the AC to 72 degrees.\""
+              },
+              {
+                "text": "Still didn't understand. Try, \"Is the AC on?\""
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1579668950728",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
       "title": "Check on Thermostat or Current Temperature",
       "metadata": {
         "_customization": {
@@ -820,7 +974,7 @@
         "selector": "body",
         "dialog_node": "node_3_1579147771512"
       },
-      "conditions": "#setThermostat",
+      "conditions": "#setThermostat || #tooCold || #tooHot",
       "dialog_node": "node_3_1579119458739",
       "previous_sibling": "node_1_1579293879244"
     },
@@ -838,7 +992,7 @@
     },
     {
       "type": "standard",
-      "title": "You're Welcome",
+      "title": "Thank you",
       "output": {
         "generic": [
           {
@@ -882,19 +1036,13 @@
     },
     {
       "type": "standard",
-      "title": "Anything else",
+      "title": "You, too! (Have a good night)",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "I didn't understand. You can try rephrasing."
-              },
-              {
-                "text": "Can you reword your statement? I'm not understanding."
-              },
-              {
-                "text": "I didn't get your meaning."
+                "text": "Thank you!"
               }
             ],
             "response_type": "text",
@@ -902,10 +1050,9 @@
           }
         ]
       },
-      "conditions": "anything_else",
-      "dialog_node": "Anything else",
-      "previous_sibling": "node_6_1579293953933",
-      "disambiguation_opt_out": true
+      "conditions": "@youToo",
+      "dialog_node": "node_8_1579668950728",
+      "previous_sibling": "node_6_1579293953933"
     },
     {
       "type": "standard",
@@ -915,7 +1062,7 @@
           {
             "values": [
               {
-                "text": "Hi, my name is Jeeves, your home butler. Try giving me a command like turn on the thermostat."
+                "text": "Hi, my name is Jeeves, your home butler. 👋  Try giving me a command like \"Turn on the thermostat.\""
               }
             ],
             "response_type": "text",
